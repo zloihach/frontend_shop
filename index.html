@@ -135,12 +135,12 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Cucumber</td>
-                          <td>$50</td>
+                        <tr th:each="product:${products}">
+                          <td th:text="${product.id}"/>
+                          <td th:text="${product.title}"/>
+                          <td th:text="${product.price}"/>
                           <td>
-                        <a class="btn btn-primary btn-sm" href="#">Edit</a>
+                        <a class="btn btn-primary btn-sm" href=""@{'/products/show_edit/' + ${product.id}}"">Edit</a>
                         <a class="btn btn-primary btn-sm" href="#">Delete</a>
                         <a class="btn btn-primary btn-sm" href="#">View</a>
                         </td>
